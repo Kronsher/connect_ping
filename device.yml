@@ -1,0 +1,235 @@
+#Device model DES & DGS-3200_1210
+ #-3200-
+- device: test
+  host: 172.16.119.33
+- device: Kafe Pioner
+  host: 172.21.0.75
+- device: DOM-7
+  host: 172.21.0.75
+- device: РКМ 1a 2end
+  host: 172.21.0.103
+- device: Galaktika
+  host: 172.21.0.104
+- device: Rechichy s. Sovhoznaya ul. Dom-22
+  host: 172.21.0.105
+- device:  Grigorovo
+  host: 172.21.0.107
+- device:  Григорово2_DES320028F_A1_ID1481
+  host: 172.21.0.108
+- device:  'Смородинки новый DES320028F_ID1500'
+  host: 172.21.0.11
+- device:  Коняшино_DES320028F_C1_ID1490
+  host: 172.21.0.110
+- device:  'Фрязино DES320028F_ID1540'
+  host: 172.21.0.117
+- device:  Больница_DES320028F_ID1081
+  host: 172.21.0.118
+- device:  'Коняшино 2 свитч DES320028F_ID1491'
+  host: 172.21.0.119
+- device:  'СНТ Электроизолятор 2ой DES320028F C1_ID1331'
+  host: 172.21.0.120
+- device:  'Жирово 3ий Свитч 320028F_ID_1042'
+  host: 172.21.0.121
+- device:  'Коняшино 3 свитч_DES320028F_C1_ID1492'
+  host: 172.21.0.122
+- device:  'Линде Газ Рус 2ой  DES320028F ID1291'
+  host: 172.21.0.126
+- device:  'Антоново Дом Животноводов DES 320028 A1'
+  host: 172.21.0.127
+- device:  'Антоново дом 1 ID1610 DES320010'
+  host: 172.21.0.129
+- device: DOM 1 кирпичный_DES320028F_C1_ID1181'
+  host: 172.21.0.136
+- device:  'СНТ Луч_DES320028F_ID2090'
+  host: 172.21.0.138
+- device:  'Кирпичный 22 2ой_DES3200F28_C1_ID1521'
+  host: 172.21.0.139
+- device:  'Молодая гвардия 2ой DES320028F C1_ID1302'
+  host: 172.21.0.141
+- device:  'Галактика 4 свитч_DES 320028F ID1103'
+  host: 172.21.0.142
+- device:  'ДНП Григорово (дачи Сбербанка) DES320028F_ID1700'
+  host: 172.21.0.144
+- device:  'Кошерово 1 свитч_DES_320028F_C1_ID1710'
+  host: 172.21.0.146
+- device:  'Кошерово 2 свитч_DES_320028F_C1_ID1711'
+  host: 172.21.0.147
+- device:  'СНТ Гжель_DES320028F_C1 ID_1720'
+  host: 172.21.0.148
+- device:  'Учительский дом_DES320028_1730'
+  host: 172.21.0.150
+- device:  'АТС Гжель 4ый свитч_DES320028F_С1_ID1653'
+  host: 172.21.0.151
+- device: DOM 4 второй_DES320028_A1_1301'
+  host: 172.21.0.152
+- device:  'Анциферово 2_DES320028F_C1_ID1751'
+  host: 172.21.0.153
+- device:  'ГСС 320028'
+  host: 172.21.0.155
+- device:  'Электроизолятор д.61_DES320028_ID1770'
+  host: 172.21.0.156
+- device:  'Крупино154 дом DES320028 C1 ID 1840'
+  host: 172.21.0.165
+- device:  'Ясная поляна второй_DES320028_C1_ID1371'
+  host: 172.21.0.166
+- device:  'Минино Орехово_DES_320028F_ID1850'
+  host: 172.21.0.174
+- device:  'Крупино д.80  DES320028 C1 ID 1890'
+  host: 172.21.0.177
+- device:  'Овражная д.4_DES320028_1901'
+  host: 172.21.0.179
+- device:  'Завод Крупино_ID1910 DES320028F'
+  host: 172.21.0.180
+- device:  'СНТ Лето_DES320028F_ID1930'
+  host: 172.21.0.181
+- device:  'Снт Лето второй DES320028F ID_1931'
+  host: 172.21.0.183
+- device:  Анциферово_DES320028F_C1_ID1750
+  host: 172.21.0.190
+- device:  'Завод электроизолятор 320028 1902'
+  host: 172.21.0.193
+- device:  'Галактика свитч_DES 320028F ID1104'
+  host: 172.21.0.194
+- device:  'РКМ дом 3б_DES320028_C1_ID_1142'
+  host: 172.21.0.201
+- device:  Анциферово3_DES320028_C1_ID1752
+  host: 172.21.0.203
+- device: DOM 1_DES320028_C1_ID1430'
+  host: 172.21.0.213
+- device:  'ПТО КХ DES320028_C1_ID_1341'
+  host: 172.21.0.224
+- device:  'DES 3200 28 P Второй офисный свитч'
+  host: 172.21.0.245
+- device:  'Садко новый DES320028F_ID1830'
+  host: 172.21.0.4
+- device: DOM 5 первый свитч_ DES320052_C1_ID1240'
+  host: 172.21.0.40
+- device: DOM3 Первый свитч_DES320028_C1_ID1251'
+  host: 172.21.0.42
+- device:  'Кошерово 3 свитч_DES_320028F_C1_ID1712'
+  host: 172.21.0.44
+- device:  'Общежитие д.14_DES_320028_C1_ID1220'
+  host: 172.21.0.45
+- device:  'Пожарная вышка  Des 320028F C1 ID точки 1191'
+  host: 172.21.0.46
+- device: DOM 8 Двух этажный_DES320010_A1_ID1200'
+  host: 172.21.0.47
+- device: DOM 3 второй DES_320028_A1_ID1201'
+  host: 172.21.0.48
+- device: DOM 4 первый свитч des 320052 с1 ID1230'
+  host: 172.21.0.49
+- device:  Пятерочка_DES320028_ID1990
+  host: 172.21.0.52
+- device:  'Синь России общага_DES320018_A1_ID1270'
+  host: 172.21.0.62
+- device:  'КП Радужный_DES320028F_ID2010'
+  host: 172.21.0.63
+- device:  'СНТ Молодая Гвардия DES320028F С1_ID1411'
+  host: 172.21.0.72
+- device:  'Кузяево дом 6_DES_320010_ID2020'
+  host: 172.21.0.74
+- device:  'Кирпичный д1 des 320028f ID точки 1180'
+  host: 172.21.0.76
+- device:  Озерное_DES320028F_C1_ID2030
+  host: 172.21.0.77
+- device:  'Общага художников Dlink DES320018_ID1280'
+  host: 172.21.0.79
+- device:  'Тяговой подстанции д.4 des 320028c1 ID_1320'
+  host: 172.21.0.84
+- device:  'СНТ Гжель_2_DES320028F_C1_ID_1062'
+  host: 172.21.0.85
+- device:  'СНТ Электроизолятор УЗЕЛ 1330 DES320028F C1_ID1330'
+  host: 172.21.0.86
+- device:  'АТС Гжель 3ий свитч_DES320028F_С1_ID1652'
+  host: 172.21.0.87
+- device:  'Электроизолятор д13 DES320028F _ID_1340'
+  host: 172.21.0.88
+- device:  'Крупино школьная 79_DES320018_ID2080'
+  host: 172.21.0.89
+- device:  'Ясная поляна_DES320028F_C1_ID1370'
+  host: 172.21.0.91
+- device:  'Кузяево дом 11 DES320028 C1 id 1410'
+  host: 172.21.0.97
+- device:  'Кирпичный дом 22 1ый_ DES320052_C1_ID1520'
+  host: 172.21.0.98
+- device:  'Рябинки DES320028F C1 ID 1420'
+  host: 172.21.0.99
+- device:  'Новая 14\2_DES320018_ID2130'
+  host: 172.22.0.100
+- device:  'Овражная д.3второй DES320028_1271'
+  host: 172.22.0.2
+- device:  'DES320028F Островцы ID2160'
+  host: 172.22.0.237
+- device:  'DES320028F Чулково ID 1332'
+  host: 172.22.0.238
+- device: DOM 15/4_DES 320028_C1_ID1390'
+  host: 172.22.0.52
+- device: DOM 15/3_DES 320028 C1_ID1400'
+  host: 172.22.0.53
+- device:  'Софьино Бар_DES320028F_C1_ID1380'
+  host: 172.22.0.54
+- device: DOM 15/1_DES 320028_C1_ID1450'
+  host: 172.22.0.55
+- device: DOM 15/2_DES 320028ME_C1_ID1460'
+  host: 172.22.0.56
+- device:  'Новая Дом 1_DES 320028_B1_ID1510'
+  host: 172.22.0.57
+- device:  'Новая дом 2_DES 320028_C1_ID1530'
+  host: 172.22.0.58
+- device:  'К.П. Софьино_DES320028F_C1_ID1550'
+  host: 172.22.0.59
+- device:  'Новая дом 3 DES 320028c1_ID1560'
+  host: 172.22.0.60
+- device:  'Софьино ТЦ_DES320028_C1_ID1570'
+  host: 172.22.0.61
+- device:  'Софьино КП 2ой_DES320028F_C1_ID1551'
+  host: 172.22.0.62
+- device:  'Бар_ второй DES320028F_A1_ID1381'
+  host: 172.22.0.63
+- device:  'Новая Дом 5_DES 320028ME_C1_ID1620'
+  host: 172.22.0.64
+- device:  'Новая Дом 6_DES320026_A1_ID1382'
+  host: 172.22.0.65
+- device:  'Новая Дом 4_DES 320028_C1_ID1640'
+  host: 172.22.0.66
+- device:  Марково_DES320028F_ID1670
+  host: 172.22.0.68
+- device:  'Новая Дом 8_DES 320028_B1_ID1740'
+  host: 172.22.0.69
+- device:  'Софьино д. 10/2 DES320010_ID1780'
+  host: 172.22.0.70
+- device:  'Овражная д2_DES320028_1880'
+  host: 172.22.0.73
+- device:  'Софьино 10\1_DES320018_ID2000'
+  host: 172.22.0.79
+- device:  'Новая 14\1_DES320018_ID2120'
+  host: 172.22.0.82
+- device:  'DES320028F офис абон ID 2141'
+  host: 172.22.0.90
+
+# -1210-
+
+- device: ATC Gjel 2end
+  host: 172.21.0.94
+- device: Baza PTO KX
+  host: 172.21.0.73
+- device: Dom 17
+  host: 172.21.0.232
+- device: Switch Osa
+  host: 172.21.0.51
+- device: Grigorova-6
+  host: 172.21.0.198
+- device: Minino orex
+  host: 172.21.0.70
+- device: Troshkovo d. Shoseinaya ul. 49
+  host: 172.21.0.22
+- device: DGS121052P/ME_ID_2200
+  host: 172.21.0.9
+- device: Pavlovskii Posad
+  host: 172.21.0.225
+- device: Pavlovskii Posad
+  host: 172.21.0.225
+- device: Chulkova Dom 22 Telmana
+  host: 172.21.0.242
+- device: Pavlovskii Posad MUS
+  host: 172.21.0.184

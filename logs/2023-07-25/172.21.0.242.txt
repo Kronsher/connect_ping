@@ -1,0 +1,5 @@
+ show config current_config
+Command: show config current_config
+
+
+2023-07-25 14:43:23.912830

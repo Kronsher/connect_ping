@@ -1,0 +1,21 @@
+show config current_config
+Command: show config current_config
+
+ System locked by other session!
+
+DES-3200-28:admin#
+DES-3200-28:admin#a
+Available commands: 
+..                  ?                   cable_diag          cd                  
+cfm                 clear               config              copy                
+create              debug               del                 delete              
+dir                 disable             download            enable              
+erase               erps                login               logout              
+md                  move                no                  ping                
+ping6               rd                  reboot              reconfig            
+rename              reset               save                show                
+smtp                telnet              traceroute          traceroute6         
+upload              
+
+DES-3200-28:admin#
+2023-07-18 16:16:09.084806

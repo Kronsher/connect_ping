@@ -1,0 +1,3 @@
+{'device': 'РљРёСЂРїРёС‡РЅС‹Р№ Рґ1 des 320028f ID С‚РѕС‡РєРё 1180', 'host': '172.21.0.76'}
+<coroutine object connect_and_set_command at 0x000001F58C18B8C0>
+2023-07-13 09:21:02.365826

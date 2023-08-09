@@ -1,0 +1,18 @@
+ show config current_config
+Command: show config current_config
+
+Nvram is progressing, please wait a moment to retry ...
+
+DGS-1210-28XS/ME:5# 
+DGS-1210-28XS/ME:5# a
+Available commands:
+?                   cfm                 clean               clear               
+config              create              debug               delete              
+disable             download            enable              erps                
+login               logout              ping                ping6               
+reboot              reload              reset               save                
+set                 show                smtp                telnet              
+top                 traceroute          traceroute6         upload              
+
+DGS-1210-28XS/ME:5# 
+2023-07-25 14:43:23.912830

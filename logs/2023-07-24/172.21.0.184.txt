@@ -1,0 +1,1166 @@
+ show config current_config
+Command: show config current_config
+
+
+
+#------------------------------------------------------------------------
+#              DGS-1210-28XS/ME Gigabit Ethernet Switch Configuration
+#
+#                           Firmware: Build 7.02.B054
+#         Copyright(C) 2010 D-Link Corporation. All rights reserved.
+#------------------------------------------------------------------------
+
+
+# User Account
+disable password encryption
+
+
+# Basic
+disable asymmetric_vlan
+config syslogintimeout 5
+enable web 80
+enable clipaging
+config command_prompt default
+config serial_port baud_rate 115200
+[K[1mCTRL+C[0m [1mESC[0m [1mq[0m Quit [1mSPACE[0m [1mn[0m Next Page [1mENTER[0m Next Entry [1ma[0m ALL[K                [Kconfig serial_port auto_logout 10_minutes
+[K[1mCTRL+C[0m [1mESC[0m [1mq[0m Quit [1mSPACE[0m [1mn[0m Next Page [1mENTER[0m Next Entry [1ma[0m ALL[K                [Kenable password_recovery
+
+# Arp Aging Time
+config arp_aging time 5
+
+# FDB Aging Time
+config fdb aging_time 300
+
+# Telnet Setting
+enable telnet 23
+
+# Vlan
+config vlan default delete 1-28
+create vlan manager tag 10
+create vlan vlan52 tag 52
+create vlan vlan74 tag 74
+create vlan VLAN115 tag 115
+create vlan VLAN1301 tag 1301
+create vlan VLAN1302 tag 1302
+create vlan VLAN1303 tag 1303
+create vlan VLAN1304 tag 1304
+create vlan VLAN1305 tag 1305
+create vlan VLAN1306 tag 1306
+create vlan VLAN1307 tag 1307
+create vlan VLAN1308 tag 1308
+create vlan VLAN1309 tag 1309
+create vlan VLAN1310 tag 1310
+create vlan VLAN1311 tag 1311
+create vlan VLAN1312 tag 1312
+create vlan VLAN1313 tag 1313
+create vlan VLAN1314 tag 1314
+create vlan VLAN1315 tag 1315
+create vlan VLAN1316 tag 1316
+create vlan VLAN1317 tag 1317
+create vlan VLAN1318 tag 1318
+create vlan VLAN1319 tag 1319
+create vlan VLAN1320 tag 1320
+create vlan VLAN1321 tag 1321
+create vlan VLAN1466 tag 1466
+config vlan manager add tagged 25-28 advertisement disable
+config vlan vlan52 add untagged 2,4-10,12-24 advertisement disable
+config vlan vlan74 add untagged 11 advertisement disable
+config vlan VLAN115 add tagged 28 advertisement enable
+config vlan VLAN1301 add tagged 1,28 advertisement disable
+config vlan VLAN1302 add tagged 1,28 advertisement disable
+config vlan VLAN1303 add tagged 1,28 advertisement disable
+config vlan VLAN1304 add tagged 1,28 advertisement disable
+config vlan VLAN1305 add tagged 1,28 advertisement disable
+config vlan VLAN1306 add tagged 1,28 advertisement disable
+config vlan VLAN1307 add tagged 1,28 advertisement disable
+config vlan VLAN1308 add tagged 1,28 advertisement disable
+config vlan VLAN1309 add tagged 1,28 advertisement disable
+config vlan VLAN1310 add tagged 1,28 advertisement disable
+config vlan VLAN1311 add tagged 1,28 advertisement disable
+config vlan VLAN1312 add tagged 1,28 advertisement disable
+config vlan VLAN1313 add tagged 1,28 advertisement disable
+config vlan VLAN1314 add tagged 1,28 advertisement disable
+config vlan VLAN1315 add tagged 1,28 advertisement disable
+config vlan VLAN1316 add tagged 1,28 advertisement disable
+config vlan VLAN1317 add tagged 1,28 advertisement disable
+config vlan VLAN1318 add tagged 1,28 advertisement disable
+config vlan VLAN1319 add tagged 1,28 advertisement disable
+config vlan VLAN1320 add tagged 1,28 advertisement disable
+config vlan VLAN1321 add tagged 1,28 advertisement disable
+config vlan VLAN1466 add tagged 28 advertisement disable
+config vlan VLAN1466 add untagged 3,25 advertisement disable
+enable pvid auto_assign
+
+# PRIVATE VLAN
+
+# IMPBv2
+enable address_binding dhcp_snoop ports 1-24 
+disable address_binding dhcp_snoop ports 1-24 ipv6
+disable address_binding dhcp_snoop ports 25-28 all
+config address_binding ip_mac ports 1 arp_inspection disable nd_inspection disable ip_inspection disable protocol ipv4 state disable allow_zeroip disable forward_dhcppkt disable
+config address_binding ip_mac ports 2,4-10,12-24 arp_inspection strict nd_inspection disable ip_inspection disable protocol ipv4 state enable allow_zeroip enable forward_dhcppkt enable
+config address_binding ip_mac ports 3 arp_inspection disable nd_inspection disable ip_inspection disable protocol ipv4 state enable allow_zeroip enable forward_dhcppkt enable
+config address_binding ip_mac ports 11 arp_inspection disable nd_inspection disable ip_inspection disable protocol ipv4 state disable allow_zeroip enable forward_dhcppkt enable
+config address_binding ip_mac ports 25-28 arp_inspection disable nd_inspection disable ip_inspection disable protocol all state disable allow_zeroip disable forward_dhcppkt enable
+config address_binding dhcp_snoop max_entry ports 1-28 limit no_limit
+config address_binding dhcp_snoop max_entry ports 1-28 limit no_limit IPv6
+enable address_binding roaming
+config address_binding vlan_checking state disable
+disable address_binding dhcp_pd_snoop
+enable address_binding trap_log
+config filter dhcp_server ports 1-27 state enable
+config filter dhcp_server vlanid 1-4094 state disable
+config filter dhcp_server illegal_server_log_suppress_duration 5min
+config filter dhcp_server log state enable
+config filter dhcpv6_server ports 1-28 state disable
+config filter dhcpv6_server log state enable
+config filter icmpv6_ra_all_node ports 1-28 state disable
+config filter icmpv6_ra_all_node log state enable
+config filter dhcpv6 ports 1-28 state disable
+config filter icmpv6_ns_na ports 1-28 state disable
+
+# IP
+config ipif System state enable
+config ipif System ipaddress 172.21.0.184/255.255.255.0
+disable jumbo_frame
+enable hol_prevention
+config ipif System dhcp_option12 state disable
+config ipif System dhcp_option12 hostname DGS-1210-28XS/ME
+config ipif System dhcpv6_client disable
+config ipv6 nd ns ipif System retrans_time 1 
+enable ipif_ipv6_link_local_auto System
+config ipif System ipv6 state enable
+disable autoconfig
+config autoconfig timeout 50
+disable autoimage
+
+# Multi Interface
+config ipif System vlan manager
+create ipif VLAN115 172.16.115.5/24 VLAN115 state enable
+config ipif VLAN115 ipv6 state disable
+
+# Static Route
+create iproute default 172.16.115.1 1 primary
+
+# Gratuitous Arp
+config gratuitous_arp send ipif_status_up disable
+config gratuitous_arp send dup_ip_detected disable
+config gratuitous_arp learning disable
+config gratuitous_arp log disable
+config gratuitous_arp send periodically ipif System interval 0
+config gratuitous_arp send periodically ipif VLAN115 interval 0
+
+# QinQ
+config qinq inner_tpid 0x8100
+config qinq ports 1-28 role nni missdrop disable outer_tpid 0x88a8 add_inner_tag disable
+disable qinq
+
+# STP
+disable stp
+config stp version rstp
+config stp priority 32768 instance_id 0
+config stp txholdcount 6 maxage 20 hellotime 2 forwarddelay 15 maxhops 20
+config stp nni_bpdu_addr dot1d
+config stp fbpdu enable
+config stp ports 1-28 externalcost auto edge auto restricted_tcn false restricted_role false p2p auto state enable priority 128 fbpdu enable
+config stp mst_config_id name 00:01:02:03:04:05 revision_level 0
+config stp mst_ports 1 instance_id 0 internalCost auto priority 128
+config stp mst_ports 2 instance_id 0 internalCost auto priority 128
+config stp mst_ports 3 instance_id 0 internalCost auto priority 128
+config stp mst_ports 4 instance_id 0 internalCost auto priority 128
+config stp mst_ports 5 instance_id 0 internalCost auto priority 128
+config stp mst_ports 6 instance_id 0 internalCost auto priority 128
+config stp mst_ports 7 instance_id 0 internalCost auto priority 128
+config stp mst_ports 8 instance_id 0 internalCost auto priority 128
+config stp mst_ports 9 instance_id 0 internalCost auto priority 128
+config stp mst_ports 10 instance_id 0 internalCost auto priority 128
+config stp mst_ports 11 instance_id 0 internalCost auto priority 128
+config stp mst_ports 12 instance_id 0 internalCost auto priority 128
+config stp mst_ports 13 instance_id 0 internalCost auto priority 128
+config stp mst_ports 14 instance_id 0 internalCost auto priority 128
+config stp mst_ports 15 instance_id 0 internalCost auto priority 128
+config stp mst_ports 16 instance_id 0 internalCost auto priority 128
+config stp mst_ports 17 instance_id 0 internalCost auto priority 128
+config stp mst_ports 18 instance_id 0 internalCost auto priority 128
+config stp mst_ports 19 instance_id 0 internalCost auto priority 128
+config stp mst_ports 20 instance_id 0 internalCost auto priority 128
+config stp mst_ports 21 instance_id 0 internalCost auto priority 128
+config stp mst_ports 22 instance_id 0 internalCost auto priority 128
+config stp mst_ports 23 instance_id 0 internalCost auto priority 128
+config stp mst_ports 24 instance_id 0 internalCost auto priority 128
+config stp mst_ports 25 instance_id 0 internalCost auto priority 128
+config stp mst_ports 26 instance_id 0 internalCost auto priority 128
+config stp mst_ports 27 instance_id 0 internalCost auto priority 128
+config stp mst_ports 28 instance_id 0 internalCost auto priority 128
+config stp trap new_root disable
+config stp trap topo_change disable
+
+# traffic segmentation
+config traffic_segmentation 1-27 forward_list 28
+config traffic_segmentation 28 forward_list 1-28
+
+# LLDP
+disable lldp
+config lldp forward_message enable
+config lldp message_tx_hold_multiplier 4
+config lldp message_tx_interval 30
+config lldp reinit_delay 2
+config lldp tx_delay 2
+config lldp ports 1-28 mgt_addr ipv4 172.21.0.184 disable
+config lldp ports 1-28 mgt_addr ipv6 fe80::7a32:1bff:fe1f:428d disable
+config lldp ports 1-28 admin_status tx_and_rx
+config lldp ports 1-28 notification disable
+config lldp ports 1-28 basic_tlvs all disable
+config lldp ports 1-28 dot1_tlv_pvid disable
+config lldp ports 1-28 dot1_tlv_vlan_name vlanid 1-4094 disable
+config lldp ports 1-28 dot1_tlv_protocol_identity eapol disable
+config lldp ports 1-28 dot1_tlv_protocol_identity lacp disable
+config lldp ports 1-28 dot1_tlv_protocol_identity gvrp disable
+config lldp ports 1-28 dot1_tlv_protocol_identity stp disable
+config lldp ports 1-28 dot3_tlvs all disable
+
+# QoS
+config scheduling_mechanism strict
+config scheduling 0 weight 1
+config scheduling 1 weight 2
+config scheduling 2 weight 3
+config scheduling 3 weight 4
+config scheduling 4 weight 5
+config scheduling 5 weight 6
+config scheduling 6 weight 7
+config scheduling 7 weight 8
+config 802.1p default_priority 1-28 0
+config 802.1p user_priority 0 2
+config 802.1p user_priority 1 0
+config 802.1p user_priority 2 1
+config 802.1p user_priority 3 3
+config 802.1p user_priority 4 4
+config 802.1p user_priority 5 5
+config 802.1p user_priority 6 6
+config 802.1p user_priority 7 7
+config dscp_mapping dscp_value 0 class 0
+config dscp_mapping dscp_value 1 class 0
+config dscp_mapping dscp_value 2 class 0
+config dscp_mapping dscp_value 3 class 0
+config dscp_mapping dscp_value 4 class 0
+config dscp_mapping dscp_value 5 class 0
+config dscp_mapping dscp_value 6 class 0
+config dscp_mapping dscp_value 7 class 0
+config dscp_mapping dscp_value 8 class 0
+config dscp_mapping dscp_value 9 class 0
+config dscp_mapping dscp_value 10 class 0
+config dscp_mapping dscp_value 11 class 0
+config dscp_mapping dscp_value 12 class 0
+config dscp_mapping dscp_value 13 class 0
+config dscp_mapping dscp_value 14 class 0
+config dscp_mapping dscp_value 15 class 0
+config dscp_mapping dscp_value 16 class 0
+config dscp_mapping dscp_value 17 class 0
+config dscp_mapping dscp_value 18 class 0
+config dscp_mapping dscp_value 19 class 0
+config dscp_mapping dscp_value 20 class 0
+config dscp_mapping dscp_value 21 class 0
+config dscp_mapping dscp_value 22 class 0
+config dscp_mapping dscp_value 23 class 0
+config dscp_mapping dscp_value 24 class 0
+config dscp_mapping dscp_value 25 class 0
+config dscp_mapping dscp_value 26 class 0
+config dscp_mapping dscp_value 27 class 0
+config dscp_mapping dscp_value 28 class 0
+config dscp_mapping dscp_value 29 class 0
+config dscp_mapping dscp_value 30 class 0
+config dscp_mapping dscp_value 31 class 0
+config dscp_mapping dscp_value 32 class 0
+config dscp_mapping dscp_value 33 class 0
+config dscp_mapping dscp_value 34 class 0
+config dscp_mapping dscp_value 35 class 0
+config dscp_mapping dscp_value 36 class 0
+config dscp_mapping dscp_value 37 class 0
+config dscp_mapping dscp_value 38 class 0
+config dscp_mapping dscp_value 39 class 0
+config dscp_mapping dscp_value 40 class 0
+config dscp_mapping dscp_value 41 class 0
+config dscp_mapping dscp_value 42 class 0
+config dscp_mapping dscp_value 43 class 0
+config dscp_mapping dscp_value 44 class 0
+config dscp_mapping dscp_value 45 class 0
+config dscp_mapping dscp_value 46 class 0
+config dscp_mapping dscp_value 47 class 0
+config dscp_mapping dscp_value 48 class 0
+config dscp_mapping dscp_value 49 class 0
+config dscp_mapping dscp_value 50 class 0
+config dscp_mapping dscp_value 51 class 0
+config dscp_mapping dscp_value 52 class 0
+config dscp_mapping dscp_value 53 class 0
+config dscp_mapping dscp_value 54 class 0
+config dscp_mapping dscp_value 55 class 0
+config dscp_mapping dscp_value 56 class 0
+config dscp_mapping dscp_value 57 class 0
+config dscp_mapping dscp_value 58 class 0
+config dscp_mapping dscp_value 59 class 0
+config dscp_mapping dscp_value 60 class 0
+config dscp_mapping dscp_value 61 class 0
+config dscp_mapping dscp_value 62 class 0
+config dscp_mapping dscp_value 63 class 0
+config cos mapping port 1-28 none
+config cos mapping port 1-28 802.1p
+config cos tos value 0 class 0
+config cos tos value 1 class 0
+config cos tos value 2 class 0
+config cos tos value 3 class 0
+config cos tos value 4 class 0
+config cos tos value 5 class 0
+config cos tos value 6 class 0
+config cos tos value 7 class 0
+config dscp mode
+config per_queue bandwidth_control ports 1 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 2 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 3 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 4 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 5 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 6 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 7 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 8 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 9 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 10 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 11 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 12 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 13 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 14 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 15 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 16 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 17 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 18 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 19 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 20 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 21 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 22 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 23 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 24 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 25 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 26 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 27 7 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 28 7 min_rate no_limit max_rate no_limit
+config mgmt_pkt_priority 7
+config bandwidth_control 1-28 rx_rate no_limit tx_rate no_limit
+create fdb vlan52 68-FF-7B-53-CA-95 port 6
+
+# Syslog
+enable syslog
+config log_save_timing on_demand
+create syslog host 1 ipaddress 172.21.0.2 severity informational facility local0 udp_port 514 state enable
+config syslog module_log igmp state disable
+config syslog module_log stp state disable
+config syslog module_log impb state disable
+
+# ACL
+enable cpu_interface_filtering
+
+# SNMP
+enable snmp
+create snmp user ReadOnly ReadOnly v1
+create snmp user ReadOnly ReadOnly v2c
+create snmp user ReadWrite ReadWrite v1
+create snmp user ReadWrite ReadWrite v2c
+create snmp group ReadOnly v1 read_view ReadWrite notify_view ReadWrite
+create snmp group ReadOnly v2c read_view ReadWrite notify_view ReadWrite
+create snmp group ReadWrite v1 read_view ReadWrite write_view ReadWrite notify_view ReadWrite
+create snmp group ReadWrite v2c read_view ReadWrite write_view ReadWrite notify_view ReadWrite
+create snmp view ReadWrite 1 1 view_type included
+create snmp community public ReadOnly
+create snmp community private ReadWrite
+config snmp engineID 4447532d313231302d323858532f4d45000102030405
+disable snmp authenticate_traps
+config snmp coldstart_traps disable
+config snmp warmstart_traps disable
+disable snmp linkchange_traps
+config snmp linkchange_traps ports 1-28 disable
+disable snmp Login_Logout traps
+disable snmp rstpport_state_change traps
+disable snmp firmware_upgrade_state traps
+disable snmp port_security_violation traps
+disable snmp IMPB_violation traps
+disable snmp LBD traps
+disable snmp DHCP_screening traps
+disable snmp duplicate_IP_detected traps
+disable snmp DHCPv6_screening traps
+disable snmp ICMPv6_RA_all_node traps
+disable snmp DULD traps
+disable snmp RPS traps
+
+# IPv6 Neighbor_cache
+
+# Voice Vlan
+disable voice_vlan
+config voice_vlan ports 1 auto dectection disable
+config voice_vlan ports 2 auto dectection disable
+config voice_vlan ports 3 auto dectection disable
+config voice_vlan ports 4 auto dectection disable
+config voice_vlan ports 5 auto dectection disable
+config voice_vlan ports 6 auto dectection disable
+config voice_vlan ports 7 auto dectection disable
+config voice_vlan ports 8 auto dectection disable
+config voice_vlan ports 9 auto dectection disable
+config voice_vlan ports 10 auto dectection disable
+config voice_vlan ports 11 auto dectection disable
+config voice_vlan ports 12 auto dectection disable
+config voice_vlan ports 13 auto dectection disable
+config voice_vlan ports 14 auto dectection disable
+config voice_vlan ports 15 auto dectection disable
+config voice_vlan ports 16 auto dectection disable
+config voice_vlan ports 17 auto dectection disable
+config voice_vlan ports 18 auto dectection disable
+config voice_vlan ports 19 auto dectection disable
+config voice_vlan ports 20 auto dectection disable
+config voice_vlan ports 21 auto dectection disable
+config voice_vlan ports 22 auto dectection disable
+config voice_vlan ports 23 auto dectection disable
+config voice_vlan ports 24 auto dectection disable
+config voice_vlan ports 25 auto dectection disable
+config voice_vlan ports 26 auto dectection disable
+config voice_vlan ports 27 auto dectection disable
+config voice_vlan ports 28 auto dectection disable
+
+# MAC address table notification
+disable mac_notification
+config mac_notification interval 1
+config mac_notification historysize 1
+config mac_notification ports 1-28 disable
+
+# SNTP
+config sntp primary 172.21.0.26 secondary 0.0.0.0 poll-interval 720
+enable sntp
+config time_zone operator + hour 3 minute 0
+config dst annual s_mth 1 s_date 1 s_time 00:00 e_mth 1 e_date 1 e_time 00:00 offset 60
+config dst repeat s_mth 1 s_week 1 s_day sun s_time 00:00 e_mth 1 e_week 1 e_day sun e_time 00:00 offset 60
+config dst disable
+
+# DHCP_RELAY
+disable dhcp_relay
+config dhcp_relay hops 4
+config dhcp_relay time 0
+config dhcp_relay port 1-28 state disable
+config dhcp_relay port 1-28 state enable
+config dhcp_relay vlan vlanid 1 state enable
+config dhcp_relay vlan vlanid 10,52,74,115,1301-1321,1466 state disable
+config dhcp_relay option_82 state enable
+config dhcp_relay option_82 check disable
+config dhcp_relay option_82 ports 1 policy replace
+config dhcp_relay option_82 ports 2 policy replace
+config dhcp_relay option_82 ports 3 policy replace
+config dhcp_relay option_82 ports 4 policy replace
+config dhcp_relay option_82 ports 5 policy replace
+config dhcp_relay option_82 ports 6 policy replace
+config dhcp_relay option_82 ports 7 policy replace
+config dhcp_relay option_82 ports 8 policy replace
+config dhcp_relay option_82 ports 9 policy replace
+config dhcp_relay option_82 ports 10 policy replace
+config dhcp_relay option_82 ports 11 policy keep
+config dhcp_relay option_82 ports 12 policy replace
+config dhcp_relay option_82 ports 13 policy replace
+config dhcp_relay option_82 ports 14 policy replace
+config dhcp_relay option_82 ports 15 policy replace
+config dhcp_relay option_82 ports 16 policy replace
+config dhcp_relay option_82 ports 17 policy replace
+config dhcp_relay option_82 ports 18 policy replace
+config dhcp_relay option_82 ports 19 policy replace
+config dhcp_relay option_82 ports 20 policy replace
+config dhcp_relay option_82 ports 21 policy replace
+config dhcp_relay option_82 ports 22 policy replace
+config dhcp_relay option_82 ports 23 policy replace
+config dhcp_relay option_82 ports 24 policy replace
+config dhcp_relay option_82 ports 25 policy replace
+config dhcp_relay option_82 ports 26 policy replace
+config dhcp_relay option_82 ports 27 policy replace
+config dhcp_relay option_82 ports 28 policy replace
+config dhcp_relay option_82 remote_id default
+config dhcp_relay option_82 circuit_id default
+enable dhcp_local_relay
+config dhcp_local_relay vlan vlanid 52 state enable
+config dhcp_local_relay port 1-27 state enable
+disable dhcpv6_relay
+config dhcpv6_relay hop_count 4
+config dhcpv6_relay port 1-28 state disable
+config dhcpv6_relay port 1-28 state enable
+config dhcpv6_relay option_37 state enable
+config dhcpv6_relay option_37 check enable
+config dhcpv6_relay option_37 remote_id default
+config dhcpv6_relay option_38 ports 1-28 state disable subscriber_id default
+config dhcpv6_relay option_18 state enable
+config dhcpv6_relay option_18 check enable
+config dhcpv6_relay option_18 interface_id default
+
+# GVRP
+disable gvrp
+config gvrp 1,26-28 pvid 1
+config gvrp 1-28 state disable
+config gvrp 1-28 ingress_checking enable
+config gvrp 1-28 acceptable_frame All_Frames
+config gvrp 2,4-10,12-24 pvid 52
+config gvrp 3,25 pvid 1466
+config gvrp 11 pvid 74
+config gvrp timer join_timer 200
+config gvrp timer leave_timer 600
+config gvrp timer leave-all_timer 10000
+
+# Loopback Detection
+enable loopdetect
+config loopdetect mode portbase
+config loopdetect interval_time 2
+config loopdetect lbd_recover_time 60
+config loopdetect ports 1 state enable
+config loopdetect ports 2 state enable
+config loopdetect ports 3 state enable
+config loopdetect ports 4 state enable
+config loopdetect ports 5 state enable
+config loopdetect ports 6 state enable
+config loopdetect ports 7 state enable
+config loopdetect ports 8 state enable
+config loopdetect ports 9 state enable
+config loopdetect ports 10 state enable
+config loopdetect ports 11 state enable
+config loopdetect ports 12 state enable
+config loopdetect ports 13 state enable
+config loopdetect ports 14 state enable
+config loopdetect ports 15 state enable
+config loopdetect ports 16 state enable
+config loopdetect ports 17 state enable
+config loopdetect ports 18 state enable
+config loopdetect ports 19 state enable
+config loopdetect ports 20 state enable
+config loopdetect ports 21 state enable
+config loopdetect ports 22 state enable
+config loopdetect ports 23 state enable
+config loopdetect ports 24 state enable
+
+# Power Saving
+config power_saving mode led disable
+config power_saving mode port disable
+config power_saving mode hibernation disable
+config power_saving mode link_detection disable
+
+# BPDU Attack Protection
+disable bpdu_protection
+config bpdu_protection recovery_timer 60
+config bpdu_protection ports 1-28 state disable mode shutdown 
+config bpdu_protection trap none
+config bpdu_protection log none
+
+# SMTP
+disable smtp
+config smtp server 0.0.0.0 server_port 25
+
+# traffic control
+config traffic trap none
+config traffic control unicast 1 disable action drop
+config traffic control multicast 1 enable action drop threshold 64
+config traffic control broadcast 1 enable action drop threshold 64
+config traffic control unicast 2 disable action drop
+config traffic control multicast 2 enable action drop threshold 64
+config traffic control broadcast 2 enable action drop threshold 64
+config traffic control unicast 3 disable action drop
+config traffic control multicast 3 enable action drop threshold 64
+config traffic control broadcast 3 enable action drop threshold 64
+config traffic control unicast 4 disable action drop
+config traffic control multicast 4 enable action drop threshold 64
+config traffic control broadcast 4 enable action drop threshold 64
+config traffic control unicast 5 disable action drop
+config traffic control multicast 5 enable action drop threshold 64
+config traffic control broadcast 5 enable action drop threshold 64
+config traffic control unicast 6 disable action drop
+config traffic control multicast 6 enable action drop threshold 64
+config traffic control broadcast 6 enable action drop threshold 64
+config traffic control unicast 7 disable action drop
+config traffic control multicast 7 enable action drop threshold 64
+config traffic control broadcast 7 enable action drop threshold 64
+config traffic control unicast 8 disable action drop
+config traffic control multicast 8 enable action drop threshold 64
+config traffic control broadcast 8 enable action drop threshold 64
+config traffic control unicast 9 disable action drop
+config traffic control multicast 9 enable action drop threshold 64
+config traffic control broadcast 9 enable action drop threshold 64
+config traffic control unicast 10 disable action drop
+config traffic control multicast 10 enable action drop threshold 64
+config traffic control broadcast 10 enable action drop threshold 64
+config traffic control unicast 11 disable action drop
+config traffic control multicast 11 enable action drop threshold 64
+config traffic control broadcast 11 enable action drop threshold 64
+config traffic control unicast 12 disable action drop
+config traffic control multicast 12 enable action drop threshold 64
+config traffic control broadcast 12 enable action drop threshold 64
+config traffic control unicast 13 disable action drop
+config traffic control multicast 13 enable action drop threshold 64
+config traffic control broadcast 13 enable action drop threshold 64
+config traffic control unicast 14 disable action drop
+config traffic control multicast 14 enable action drop threshold 64
+config traffic control broadcast 14 enable action drop threshold 64
+config traffic control unicast 15 disable action drop
+config traffic control multicast 15 enable action drop threshold 64
+config traffic control broadcast 15 enable action drop threshold 64
+config traffic control unicast 16 disable action drop
+config traffic control multicast 16 enable action drop threshold 64
+config traffic control broadcast 16 enable action drop threshold 64
+config traffic control unicast 17 disable action drop
+config traffic control multicast 17 enable action drop threshold 64
+config traffic control broadcast 17 enable action drop threshold 64
+config traffic control unicast 18 disable action drop
+config traffic control multicast 18 enable action drop threshold 64
+config traffic control broadcast 18 enable action drop threshold 64
+config traffic control unicast 19 disable action drop
+config traffic control multicast 19 enable action drop threshold 64
+config traffic control broadcast 19 enable action drop threshold 64
+config traffic control unicast 20 disable action drop
+config traffic control multicast 20 enable action drop threshold 64
+config traffic control broadcast 20 enable action drop threshold 64
+config traffic control unicast 21 disable action drop
+config traffic control multicast 21 enable action drop threshold 64
+config traffic control broadcast 21 enable action drop threshold 64
+config traffic control unicast 22 disable action drop
+config traffic control multicast 22 enable action drop threshold 64
+config traffic control broadcast 22 enable action drop threshold 64
+config traffic control unicast 23 disable action drop
+config traffic control multicast 23 enable action drop threshold 64
+config traffic control broadcast 23 enable action drop threshold 64
+config traffic control unicast 24 disable action drop
+config traffic control multicast 24 enable action drop threshold 64
+config traffic control broadcast 24 enable action drop threshold 64
+config traffic control unicast 25 disable action drop
+config traffic control multicast 25 disable action drop
+config traffic control broadcast 25 disable action drop
+config traffic control unicast 26 disable action drop
+config traffic control multicast 26 disable action drop
+config traffic control broadcast 26 disable action drop
+config traffic control unicast 27 disable action drop
+config traffic control multicast 27 disable action drop
+config traffic control broadcast 27 disable action drop
+config traffic control unicast 28 disable action drop
+config traffic control multicast 28 disable action drop
+config traffic control broadcast 28 disable action drop
+config traffic control auto_recover_time 0
+
+# RMON
+disable rmon
+
+# ISM vlan
+disable igmp_snooping multicast_vlan
+
+# IGMP snooping
+disable igmp_snooping
+config igmp_snooping all router_timeout 125
+config igmp_snooping all host_timeout 260
+config igmp_snooping rate_limit state disable
+config igmp_snooping rate_limit rate 200
+config igmp_snooping data_driven_learning max_learned_entry 1024
+disable igmp_snooping forward_mcrouter_only
+config igmp_snooping vlanid 1,10,52,74,115,1301-1321,1466 state disable fast_leave disable report_suppression enable
+config igmp_snooping vlanid 1,10,52,74,115,1301-1321,1466 proxy_reporting state disable
+config igmp_snooping vlanid 1,10,52,74,115,1301-1321,1466 proxy_reporting source_ip 0.0.0.0
+config igmp_snooping data_driven_learning vlanid 1,10,52,74,115,1301-1321,1466 state disable
+config igmp_snooping data_driven_learning vlanid 1,10,52,74,115,1301-1321,1466 aged_out disable
+config igmp_snooping querier vlanid 1,10,52,74,115,1301-1321,1466 state disable querier_version 2 last_member_query_interval 1 max_response_time 10 query_interval 125 robustness_variable 2
+config igmp access_authentication ports 1-28 state disable
+
+# MLD Snooping
+disable mld_snooping
+config mld_snooping all router_timeout 125
+config mld_snooping all host_timeout 260
+config mld_snooping data_driven_learning max_learned_entry 1024
+disable mld_snooping forward_mcrouter_only
+config mld_snooping vlanid 1,10,52,74,115,1301-1321,1466 state disable fast_done disable
+config mld_snooping data_driven_learning vlanid 1,10,52,74,115,1301-1321,1466 state disable
+config mld_snooping querier vlanid 1,10,52,74,115,1301-1321,1466 state disable version 2 last_listener_query_interval 1 max_response_time 10 query_interval 125 robustness_variable 2
+
+# Multicast Filter
+config multicast vlan_filtering_mode vlan default forward_unregistered_groups
+config multicast vlan_filtering_mode vlan manager forward_unregistered_groups
+config multicast vlan_filtering_mode vlan vlan52 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan vlan74 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN115 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1301 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1302 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1303 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1304 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1305 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1306 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1307 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1308 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1309 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1310 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1311 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1312 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1313 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1314 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1315 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1316 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1317 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1318 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1319 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1320 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1321 forward_unregistered_groups
+config multicast vlan_filtering_mode vlan VLAN1466 forward_unregistered_groups
+
+# 8021X
+disable 802.1x
+config 802.1x auth_mode port_based
+config 802.1x auth_protocol local
+config 802.1x fwd_pdu system enable
+config 802.1x capability ports 1-28 none
+config 802.1x auth_parameter ports 1-28 port_control auto
+config 802.1x auth_parameter ports 1-28 direction both quiet_period 60 tx_period 30 supp_timeout 30 server_timeout 30 max_req 2 reauth_period 3600 enable_reauth disable
+
+# port mirroring
+disable rspan 
+
+# trusted host
+disable trusted_host
+
+# SSL
+disable ssl ciphersuite ECDHE_RSA_WITH_AES_128_CBC_SHA ECDHE_ECDSA_WITH_AES_256_CBC_SHA DHE_RSA_WITH_AES_256_CBC_SHA ECDHE_RSA_WITH_AES_256_CBC_SHA ECDHE_ECDSA_WITH_AES_128_CBC_SHA DHE_RSA_WITH_AES_128_CBC_SHA RSA_WITH_AES_128_CBC_SHA
+
+# SSH
+disable ssh
+config ssh server authfail 2
+config ssh server rekey 60min
+config ssh server maxsession 4
+config ssh server contimeout 120
+config ssh authmode password disable
+config ssh authmode publickey disable
+config ssh authmode hostbased disable
+config ssh algorithm 3DES enable
+config ssh algorithm MD5 enable
+config ssh algorithm SHA1 enable
+config ssh algorithm RSA enable
+
+# access authentication control
+disable authen_policy
+disable aaa_server_password_encryption
+config authen parameter response_timeout 30
+config authen parameter attempt 3
+create authen server_group tacacs+
+create authen server_group radius
+create authen_login method_list_name default
+config authen_login default method local    
+create authen_enable method_list_name default
+config authen_enable default method none    
+config authen application console login method_list_name default
+config authen application telnet login method_list_name default
+config authen application ssh login method_list_name default
+config authen application http login method_list_name default
+config authen application console enable method_list_name default
+config authen application telnet enable method_list_name default
+config authen application ssh enable method_list_name default
+config authen application http enable method_list_name default
+
+# PPPoE
+config pppoe circuit_id_insertion state disable
+config pppoe circuit_id_insertion ports 1-28 circuit_id ip state disable
+config pppoe circuit_id_insertion ports 1-28 remote_id default
+
+# safeguard_engine
+config safeguard_engine state enable
+disable command logging
+disable vlan_trunk
+
+# Ethernet OAM
+config ethernet_oam ports 1-28 state disable mode active remote_loopback stop received_remote_loopback ignore
+config ethernet_oam ports 1-28 critical_link_event dying_gasp notify_state enable
+config ethernet_oam ports 1-28 critical_link_event critical_event notify_state enable
+config ethernet_oam ports 1-28 link_monitor error_symbol threshold 1 window 1000 notify_state enable
+config ethernet_oam ports 1-28 link_monitor error_frame threshold 1 window 1000 notify_state enable
+config ethernet_oam ports 1-28 link_monitor error_frame_seconds threshold 1 window 60000 notify_state enable
+config ethernet_oam ports 1-28 link_monitor error_frame_period threshold 1 window 1488100 notify_state enable
+
+# DULD
+config duld ports 1-28 state disable mode normal discovery_time 5
+config duld recover_timer 60
+
+# port security
+config port_security 1-28 admin_state disable max_learning_addr 32 lock_address_mode DeleteOnTimeout 
+
+# LACP
+config link_aggregation state disable
+config link_aggregation algorithm mac_source
+config lacp port_priority 1-28 128 timeout long
+config lacp_ports 1-28 mode active
+
+# Limited IP Multicast
+config max_mcast_group ports 1-28 ipv4 max_group 1024 action drop
+config max_mcast_group ports 1-28 ipv6 max_group 1024 action drop
+config limited_multicast_addr ports 1-28 ipv4 access permit
+config limited_multicast_addr ports 1-28 ipv6 access permit
+
+# DoS Prevention
+config dos_prevention dos_type land_attack action drop state disable
+config dos_prevention dos_type blat_attack action drop state disable
+config dos_prevention dos_type tcp_null_scan action drop state disable
+config dos_prevention dos_type tcp_xmascan action drop state disable
+config dos_prevention dos_type tcp_synfin action drop state disable
+config dos_prevention dos_type tcp_syn_srcport_less_1024 action drop state disable
+config dos_prevention dos_type ping_death_attack action drop state disable
+config dos_prevention dos_type tcp_tiny_frag_attack action drop state disable
+disable dos_prevention trap_log
+
+# DDM
+config ddm power_unit dbm
+config ddm ports 1-28 state disable
+config ddm ports 1-28 shutdown none
+config ddm ports 1-28 temperature_threshold high_alarm +95.000 low_alarm -25.000 high_warning +90.000 low_warning -20.000
+config ddm ports 1-28 voltage_threshold high_alarm 3.80 low_alarm 2.80 high_warning 3.70 low_warning 2.90
+config ddm ports 1-28 bias_current_threshold high_alarm 20.0 low_alarm 0.5 high_warning 18.0 low_warning 1.0
+config ddm ports 1-28 tx_power_threshold high_alarm 2.0 low_alarm -8.0 high_warning 1.0 low_warning -7.0
+config ddm ports 1-28 rx_power_threshold high_alarm 1.0 low_alarm -20.0 high_warning 0.0 low_warning -19.0
+
+# Flood FDB
+disable flood_fdb
+
+# Static Multicast 
+
+# L2 Protocol Tunnel
+disable l2protocol_tunnel
+
+# Cpu Protection
+disable cpu_protect
+config cpu_protect pps no_limit type arp
+config cpu_protect pps no_limit type bpdu
+config cpu_protect pps no_limit type icmp
+config cpu_protect pps no_limit type igmp
+config cpu_protect pps no_limit type snmp
+
+# MAC-based VLAN
+config mac_based_vlan method single
+
+# MAC-based_Access_Control
+disable mac_based_access_control
+config mac_based_access_control method radius
+config mac_based_access_control trap state disable
+config mac_based_access_control log state disable
+config mac_based_access_control max_users 128
+config mac_based_access_control port 1 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 2 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 3 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 4 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 5 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 6 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 7 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 8 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 9 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 10 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 11 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 12 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 13 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 14 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 15 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 16 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 17 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 18 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 19 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 20 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 21 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 22 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 23 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 24 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 25 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 26 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 27 state disable aging_time 1440 block_time 300
+config mac_based_access_control port 28 state disable aging_time 1440 block_time 300
+
+# Accounting
+create accounting method_list_name default
+config accounting default method none    
+config accounting service network state disable 
+config accounting service shell state disable 
+config accounting service system state disable 
+config accounting service command administrator none 
+config accounting service command operator none 
+config accounting service command power_user none 
+config accounting service command user none 
+
+# Energy Efficient Ethernet
+config EEE port 1 state disable
+config EEE port 2 state disable
+config EEE port 3 state disable
+config EEE port 4 state disable
+config EEE port 5 state disable
+config EEE port 6 state disable
+config EEE port 7 state disable
+config EEE port 8 state disable
+config EEE port 9 state disable
+config EEE port 10 state disable
+config EEE port 11 state disable
+config EEE port 12 state disable
+config EEE port 13 state disable
+config EEE port 14 state disable
+config EEE port 15 state disable
+config EEE port 16 state disable
+config EEE port 17 state disable
+config EEE port 18 state disable
+config EEE port 19 state disable
+config EEE port 20 state disable
+config EEE port 21 state disable
+config EEE port 22 state disable
+config EEE port 23 state disable
+config EEE port 24 state disable
+config EEE port 25 state disable
+config EEE port 26 state disable
+config EEE port 27 state disable
+config EEE port 28 state disable
+
+# port
+config ports 1-24 capability_advertised 100_half 100_full 1000_full 
+config ports 25-28 capability_advertised 1000_full 10G_full 
+config ports 1,25-28 speed auto state enable flow_control disable learning enable description ""
+config ports 2,4,8,11 speed 100_full state disable flow_control disable learning enable description ""
+config ports 3,5-7,9-10,12-24 speed 100_full state enable flow_control disable learning enable description ""
+
+# DDP
+disable ddp
+config ddp report state disable
+config ddp report timer 30
+config ddp ports 1 state disable
+config ddp ports 2 state disable
+config ddp ports 3 state disable
+config ddp ports 4 state disable
+config ddp ports 5 state disable
+config ddp ports 6 state disable
+config ddp ports 7 state disable
+config ddp ports 8 state disable
+config ddp ports 9 state disable
+config ddp ports 10 state disable
+config ddp ports 11 state disable
+config ddp ports 12 state disable
+config ddp ports 13 state disable
+config ddp ports 14 state disable
+config ddp ports 15 state disable
+config ddp ports 16 state disable
+config ddp ports 17 state disable
+config ddp ports 18 state disable
+config ddp ports 19 state disable
+config ddp ports 20 state disable
+config ddp ports 21 state disable
+config ddp ports 22 state disable
+config ddp ports 23 state disable
+config ddp ports 24 state disable
+config ddp ports 25 state disable
+config ddp ports 26 state disable
+config ddp ports 27 state disable
+config ddp ports 28 state disable
+
+# ERPS
+disable erps
+config erps version g.8032v2
+config erps log disable
+config erps trap disable
+
+# ECFM
+disable cfm
+config cfm trap ais state disable
+config cfm trap lock state disable
+config cfm mp_ltr_all disable
+
+# SFLOW
+disable sflow
+
+#------------------------------------------------------------------------
+# End of configuration file for DGS-1210-28XS/ME
+#------------------------------------------------------------------------
+
+
+[27m                       DGS-1210-28XS/ME:5# 
+DGS-1210-28XS/ME:5# 
+2023-07-24 15:51:25.663255

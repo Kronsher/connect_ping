@@ -1,0 +1,111 @@
+show config current_config
+Command: show config current_config
+ 
+#-------------------------------------------------------------------------------
+#                      DES-3200-28F Fast Ethernet Switch
+#                                Configuration
+#
+#                          Firmware: Build 4.51.B005
+#           Copyright(C) 2017 D-Link Corporation. All rights reserved.
+#-------------------------------------------------------------------------------
+ 
+
+# DEVICE
+
+config temperature threshold high 79
+config temperature threshold low 11
+config temperature trap state enable
+config temperature log state enable
+
+# BASIC
+
+# ACCOUNT LIST
+
+[7mCTRL+C[0m [7mESC[0m [7mq[0m Quit [7mSPACE[0m [7mn[0m Next Page [7mENTER[0m Next Entry [7ma[0m All                                                                                                     [1Acreate account admin admin
+
+[7mCTRL+C[0m [7mESC[0m [7mq[0m Quit [7mSPACE[0m [7mn[0m Next Page [7mENTER[0m Next Entry [7ma[0m All                                                                                                     [1A*@&zT8f/Pbyovfxe3aUyKRuYGuFmLrp10Ch
+*@&zT8f/Pbyovfxe3aUyKRuYGuFmLrp10Ch
+
+# ACCOUNT END
+# PASSWORD ENCRYPTION
+enable password encryption 
+config serial_port baud_rate 115200 auto_logout 10_minutes
+enable web 80
+enable clipaging
+config terminal width 80
+config terminal_line default
+disable command logging
+enable password_recovery
+
+# DEBUG
+
+debug config state enable
+debug config error_reboot enable
+
+# STORM
+
+config traffic control 1 broadcast disable multicast disable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 2 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 3 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 4 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 5 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 6 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 7 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 8 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 9 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 10 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 11 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 12 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 13 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 14 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 15 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 16 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 17 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 18 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 19 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 20 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 21 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 22 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 23 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 24 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 25 broadcast disable multicast disable unicast disable action drop threshold 131072 countdown 0 time_interval 5 
+config traffic control 26 broadcast disable multicast disable unicast disable action drop threshold 131072 countdown 0 time_interval 5 
+config traffic control 27 broadcast disable multicast disable unicast disable action drop threshold 131072 countdown 0 time_interval 5 
+config traffic control 28 broadcast disable multicast disable unicast disable action drop threshold 131072 countdown 0 time_interval 5 
+config traffic control auto_recover_time 0
+config traffic trap none
+config traffic control log state enable
+
+# LOOP_DETECT
+
+enable loopdetect
+config loopdetect recover_timer 60 interval 10 mode port-based 
+config loopdetect log state enable
+config loopdetect ports 1 state disable
+config loopdetect ports 2 state disable
+config loopdetect ports 3 state disable
+config loopdetect ports 4 state disable
+config loopdetect ports 5 state disable
+config loopdetect ports 6 state disable
+config loopdetect ports 7 state disable
+config loopdetect ports 8 state disable
+config loopdetect ports 9 state disable
+config loopdetect ports 10 state disable
+config loopdetect ports 11 state disable
+config loopdetect ports 12 state disable
+config loopdetect ports 13 state disable
+config loopdetect ports 14 state disable
+config loopdetect ports 15 state disable
+config loopdetect ports 16 state disable
+config loopdetect ports 17 state disable
+config loopdetect ports 18 state disable
+config loopdetect ports 19 state disable
+config loopdetect ports 20 state disable
+config loopdetect ports 21 state disable
+config loopdetect ports 22 state disable
+config loopdetect ports 23 state disable
+config loopdetect ports 24 state disable
+config loopdetect ports 25 state disable
+config loopdetect ports 26 state disable
+
+2023-07-21 09:12:59.267729

@@ -1,0 +1,25 @@
+aaashow config current_config
+
+Available commands: 
+..                  ?                   cable_diag          cfm                 
+clear               config              create              debug               
+delete              dir                 disable             download            
+enable              login               logout              ping                
+ping6               reboot              reconfig            reset               
+save                show                smtp                telnet              
+traceroute          traceroute6         upload              
+
+Bar2:5#
+Bar2:5#a
+
+Available commands: 
+..                  ?                   cable_diag          cfm                 
+clear               config              create              debug               
+delete              dir                 disable             download            
+enable              login               logout              ping                
+ping6               reboot              reconfig            reset               
+save                show                smtp                telnet              
+traceroute          traceroute6         upload              
+
+Bar2:5#
+2023-07-25 14:32:22.539157

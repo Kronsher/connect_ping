@@ -1,0 +1,257 @@
+show config current_config
+Command: show config current_config
+ 
+#-------------------------------------------------------------------------------
+#                       DES-3200-18 Fast Ethernet Switch
+#                                Configuration
+#
+#                          Firmware: Build 4.36.B008
+#           Copyright(C) 2012 D-Link Corporation. All rights reserved.
+#-------------------------------------------------------------------------------
+ 
+
+# DEVICE
+
+config temperature threshold high 79
+config temperature threshold low 11
+config temperature trap state enable
+config temperature log state enable
+
+# BASIC
+
+# ACCOUNT LIST
+
+[7mCTRL+C[0m [7mESC[0m [7mq[0m Quit [7mSPACE[0m [7mn[0m Next Page [7mENTER[0m Next Entry [7ma[0m All                                                                                                     [1Acreate account admin admin
+
+[7mCTRL+C[0m [7mESC[0m [7mq[0m Quit [7mSPACE[0m [7mn[0m Next Page [7mENTER[0m Next Entry [7ma[0m All                                                                                                     [1A*@&zT8f/Pbyovfxe3aUyKRuYGuFmLrp10Ch
+*@&zT8f/Pbyovfxe3aUyKRuYGuFmLrp10Ch
+
+# ACCOUNT END
+# PASSWORD ENCRYPTION
+enable password encryption 
+config serial_port baud_rate 115200 auto_logout 10_minutes
+enable web 80
+enable clipaging
+config terminal width 80
+config terminal_line default
+disable command logging
+enable password_recovery
+
+# DEBUG
+
+debug config state enable
+debug config error_reboot enable
+
+# STORM
+
+config traffic control 1 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 2 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 3 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 4 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 5 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 6 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 7 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 8 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 9 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 10 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 11 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 12 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 13 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 14 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 15 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 16 broadcast enable multicast enable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 17 broadcast disable multicast disable unicast disable action drop threshold 64 countdown 0 time_interval 5 
+config traffic control 18 broadcast disable multicast disable unicast disable action drop threshold 131072 countdown 0 time_interval 5 
+config traffic control auto_recover_time 0
+config traffic trap none
+config traffic control log state enable
+
+# LOOP_DETECT
+
+enable loopdetect
+config loopdetect recover_timer 60 interval 10 mode port-based 
+config loopdetect log state enable
+config loopdetect ports 1 state enable
+config loopdetect ports 2 state enable
+config loopdetect ports 3 state enable
+config loopdetect ports 4 state enable
+config loopdetect ports 5 state enable
+config loopdetect ports 6 state enable
+config loopdetect ports 7 state enable
+config loopdetect ports 8 state enable
+config loopdetect ports 9 state enable
+config loopdetect ports 10 state enable
+config loopdetect ports 11 state enable
+config loopdetect ports 12 state enable
+config loopdetect ports 13 state enable
+config loopdetect ports 14 state enable
+config loopdetect ports 15 state enable
+config loopdetect ports 16 state enable
+config loopdetect ports 17 state enable
+config loopdetect ports 18 state disable
+config loopdetect trap none
+
+# GM
+
+disable sim
+config sim candidate
+config sim dp_interval 30
+config sim hold_time 100
+
+# GM_H
+
+
+# MIRROR
+
+disable mirror
+
+# QOS
+
+config 802.1p user_priority 0 2
+config 802.1p user_priority 1 0
+config 802.1p user_priority 2 1
+config 802.1p user_priority 3 3
+config 802.1p user_priority 4 4
+config 802.1p user_priority 5 5
+config 802.1p user_priority 6 6
+config 802.1p user_priority 7 7
+config 802.1p default_priority 1-18 0
+config bandwidth_control 1-18 rx_rate no_limit tx_rate no_limit
+config per_queue bandwidth_control ports 1-18 0 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 1 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 2 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 3 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 4 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 5 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 6 min_rate no_limit max_rate no_limit
+config per_queue bandwidth_control ports 1-18 7 min_rate no_limit max_rate no_limit
+config scheduling_mechanism ports 1-18 strict
+config scheduling ports 1-18 0 weight 1
+config scheduling ports 1-18 1 weight 2
+config scheduling ports 1-18 2 weight 3
+config scheduling ports 1-18 3 weight 4
+config scheduling ports 1-18 4 weight 5
+config scheduling ports 1-18 5 weight 6
+config scheduling ports 1-18 6 weight 7
+config scheduling ports 1-18 7 weight 8
+
+# SYSLOG
+
+config log_save_timing on_demand
+enable syslog
+config system_severity trap information
+config system_severity log information
+create syslog host 1 ipaddress 172.21.0.2 severity informational facility local0 udp_port 514 state enable 
+
+# TRAF-SEGMENTATION
+
+config traffic_segmentation 1-17 forward_list 18
+config traffic_segmentation 18 forward_list all
+
+# SSL
+
+disable ssl 
+enable ssl ciphersuite RSA_with_RC4_128_MD5 
+enable ssl ciphersuite RSA_with_3DES_EDE_CBC_SHA 
+enable ssl ciphersuite DHE_DSS_with_3DES_EDE_CBC_SHA 
+enable ssl ciphersuite RSA_EXPORT_with_RC4_40_MD5 
+config ssl cachetimeout 600 
+
+# PORT
+
+disable jumbo_frame
+config ports 1 speed 100_full flow_control disable learning enable state enable mdix auto
+config ports 2 speed 100_full flow_control disable learning enable state enable mdix normal
+config ports 3-16 speed auto flow_control disable learning enable state enable mdix auto
+config ports 17 medium_type copper speed auto flow_control disable learning enable state enable mdix auto
+config ports 17 medium_type fiber speed auto flow_control disable learning enable state enable
+config ports 18 speed 100_full flow_control disable learning enable state enable
+
+# SFLOW
+
+disable sflow
+
+# OAM
+
+config ethernet_oam ports 1-18 mode active
+config ethernet_oam ports 1-18 state disable
+config duld ports 1-18 state disable
+config duld ports 1-18 discovery_time 5
+config duld ports 1-18 mode normal
+config ethernet_oam ports 1-18 link_monitor error_symbol threshold 1 window 1000 notify_state enable
+config ethernet_oam ports 1-18 link_monitor error_frame threshold 1 window 1000 notify_state enable
+config ethernet_oam ports 1-18 link_monitor error_frame_period threshold 1 window 1488100 notify_state enable
+config ethernet_oam ports 1-18 link_monitor error_frame_seconds threshold 1 window 60000 notify_state enable
+config ethernet_oam ports 1-18 critical_link_event dying_gasp notify_state enable
+config ethernet_oam ports 1-18 critical_link_event  critical_event notify_state enable
+config ethernet_oam ports 1-18 received_remote_loopback ignore
+
+# DDM
+
+config ddm trap disable
+config ddm log enable
+config ddm ports 17-18 state enable shutdown none
+
+# MANAGEMENT
+
+enable snmp traps 
+enable snmp authenticate_traps 
+enable snmp linkchange_traps
+enable snmp
+config snmp linkchange_traps ports 1-18 enable
+
+# TRAP
+
+config snmp coldstart_traps enable
+config snmp warmstart_traps enable
+config rmon trap rising_alarm enable
+config rmon trap falling_alarm enable
+
+# TR
+
+
+# IGMP_MULTICAST_VLAN
+
+disable igmp_snooping multicast_vlan
+config igmp_snooping multicast_vlan forward_unmatched disable
+
+# VLAN
+
+enable pvid auto_assign
+config vlan default delete 1-18
+config vlan default advertisement enable
+create vlan manager tag 10
+config vlan manager add tagged 17-18 advertisement disable
+create vlan VLAN119 tag 119
+config vlan VLAN119 add tagged 17-18 advertisement disable
+create vlan vlan200 tag 200
+config vlan vlan200 add tagged 17-18
+config vlan vlan200 add untagged 1-14 advertisement disable
+create vlan VLAN1298 tag 1298
+config vlan VLAN1298 add tagged 17-18
+config vlan VLAN1298 add untagged 15-16 advertisement disable
+disable qinq
+disable gvrp
+config gvrp nni_bpdu_addr dot1d
+disable vlan_trunk
+config port_vlan 1-14 gvrp_state disable ingress_checking enable acceptable_frame admit_all pvid 200
+config port_vlan 15-16 gvrp_state disable ingress_checking enable acceptable_frame admit_all pvid 1298
+config port_vlan 17-18 gvrp_state disable ingress_checking enable acceptable_frame admit_all pvid 1
+
+# PORT_SECURITY
+
+config port_security system max_learning_addr no_limit
+disable port_security trap_log
+config port_security ports 1-18 admin_state disable max_learning_addr 32 lock_address_mode deleteonreset
+
+# ACL
+
+
+#CPU Interface Filter
+
+disable cpu_interface_filtering 
+
+# PROTOCOL_VLAN
+
+
+2023-07-21 09:12:59.255762

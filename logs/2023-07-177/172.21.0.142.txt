@@ -1,0 +1,2 @@
+show config current_config
+2023-07-17 13:23:24.453527
