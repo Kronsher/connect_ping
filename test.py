@@ -11,8 +11,8 @@ def connect(ip):
             login = ""
             login += str(telnet.read_until(b'UserName:'))
             print(login)
-            telnet.write(b'admin\n')
-            telnet.write(b'Intr1X\n')
+            telnet.write(b'username\n')
+            telnet.write(b'password\n')
             login += str(telnet.read_until(b'#'))
             print(login)
             telnet.write(b'show boot_file\n')
